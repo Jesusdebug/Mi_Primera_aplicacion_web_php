@@ -1,18 +1,18 @@
 <?php 
 require 'conexion.php';
 // recibir un dato por vinculo se usa el metodo get
-$Id =$mysqli->real_escape_string ($_GET['Id']);
-$sql = "SELECT  Nombre, Telefono, Fecha_nacimiento, Estado_civil FROM empleados WHERE Id ";
-if($resultado = $mysqli->query($sql)){
- while($fila= $resultado->fetch_assoc()){
+$id =$mysqli->real_escape_string ($_GET['Id']);
+$sql = "SELECT  Nombre, Telefono, Fecha_nacimiento, Estado_civil FROM empleados WHERE Id= $id ";
+$resultado = $mysqli->query($sql);
 
-
+$fila = $resultado ->fetch_assoc();
 
 ?>
 <!doctype html>
 <html lang="es">
 
 <head>
+
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -34,6 +34,8 @@ if($resultado = $mysqli->query($sql)){
                         <label for="nombre" class="form-label">Nombre</label>
                         <input type="text" class="form-control" id="nombre" name="nombre"
                             placeholder="introduce el nombre" value="<?php echo $fila['Nombre']; ?>" autofocus require>
+                            <input type="text" class="form-control" id="nombre" name="nombre"
+                            placeholder="introduce el nombre" value="<?php echo $fila['Nombre']; ?>" autofocus require>
                         <!-- el autofocus es para que pase el control a nombre, -->
                     </div>
                     <div class="form-group">
@@ -45,30 +47,31 @@ if($resultado = $mysqli->query($sql)){
                     <div class="form-group">
                         <label for="Fecha_nacimiento" class="form-label">Fecha de nacimiento</label>
                         <input type="date" class="form-control" id="Fecha_nacimiento" name="Fecha_nacimiento"
-                            placeholder="introduce la Fecha_nacimineto" value="<?php echo $fila['Fecha_nacimiento'];?>"
-                            require>
+                            placeholder="introduce la Fecha_nacimineto" value="<?php echo $fila['Fecha_nacimiento'];?>" require>
 
                     </div>
                     <div class="form-group">
                         <label for="Estado_civil" class="form-label">Estado civil</label>
-                        <select class="form-control" id="Estado_civil" name="Estado_civil" require>
-
-                            <option value="soltero" <?php if("Soltero"== $fila['Estado_civil'])
+                        <select class="form-control" id="Estado_civil" name="Estado_civil"
+                         require>
+                            
+                            <option value="soltero"<?php if("Soltero"== $fila['Estado_civil'])
                             { echo 'select';}?>>Soltero</option>
-                            <option value="casado" <?php if("casado"== $fila['casado'])
+                            <option value="casado"
+                            <?php if("casado"== $fila['casado'])
                             { echo 'select';}?>>casado</option>
-                            <option value="otro" <?php if("otro"== $fila['otro'])
+                            <option value="otro"
+                            <?php if("otro"== $fila['otro'])
                             { echo 'select';}?>>otro</option>
                         </select>
 
                     </div>
-                    }
                     <div class="form-group">
                         <button class="btn btn-primary" id="guarda" name="guarda" type="submit"> guarda</button>
                     </div>
                 </form>
             </div>
-            }
+
 
             <script src="js/jquery-3.6.0.min.js"></script>
             <script src="js/bootstrap.min.js"></script>
