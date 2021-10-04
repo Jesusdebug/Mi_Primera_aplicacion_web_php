@@ -1,18 +1,14 @@
 <!doctype html>
 <html lang="es">
-
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <!-- Bootstrap CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <title>Empresa!</title>
 </head>
-
 <body>
-
     <div class="container">
         <div class="row">
             <h1>Empleados</h1>
@@ -29,13 +25,11 @@
                         <label for="Telefono" class="form-label">Telefono</label>
                         <input type="text" class="form-control" id="Telefono" name="Telefono"
                             placeholder="introduce el Telefono" require>
-
                     </div>
                     <div class="form-group">
                         <label for="Fecha_nacimiento" class="form-label">Fecha de nacimiento</label>
                         <input type="date" class="form-control" id="Fecha_nacimiento" name="Fecha_nacimiento"
                             placeholder="introduce la Fecha_nacimineto" require>
-
                     </div>
                     <div class="form-group">
                         <label for="Estado_civil" class="form-label">Estado civil</label>
@@ -45,20 +39,15 @@
                             <option value="casado">casado</option>
                             <option value="otro">otro</option>
                         </select>
-
                     </div>
                     <div class="form-group">
                         <button class="btn btn-primary" id="guarda" name="guarda" type="submit"> guarda</button>
                     </div>
                 </form>
             </div>
-
-
             <script src="js/jquery-3.6.0.min.js"></script>
             <script src="js/bootstrap.min.js"></script>
         </div>
     </div>
-
 </body>
-
 </html>

@@ -6,7 +6,6 @@ $nombre = $mysqli->real_escape_string($_POST['nombre']);//forma simple, nos apoy
 $Telefono = $mysqli->real_escape_string($_POST['Telefono']);
 $Fecha_nacimiento = $mysqli->real_escape_string($_POST['Fecha_nacimiento']);
 $Estado_civil = $mysqli->real_escape_string($_POST['Estado_civil']);
-
 // insercion a sql
 $sql= "INSERT INTO empleados (nombre, Telefono, Fecha_nacimiento, Estado_civil, activo) values
  ('$nombre','$Telefono', '$Fecha_nacimiento', '$Estado_civil', 1)";
